@@ -12,8 +12,10 @@ echo "Initializing directories..."
 mkdir ${XPLANET_DIR}
 mkdir ${XPLANET_WORLD_DIR}
 
-echo "Unpacking scripts..."
-tar -xjf scripts.tar.bz2 -C ${XPLANET_DIR}
+echo "Installing scripts..."
+cp config ${XPLANET_DIR}/
+cp xplanet-download_clouds.py ${XPLANET_DIR}/
+cp xplanet-gnome2.sh ${XPLANET_DIR}/
 
 echo "Downloading images..."
 wget -O ${XPLANET_WORLD_DIR}/01.jpg http://veimages.gsfc.nasa.gov/7100/world.topo.bathy.200401.3x5400x2700.jpg
