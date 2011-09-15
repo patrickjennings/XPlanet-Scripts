@@ -30,7 +30,7 @@ defaultOutputFile = "clouds_4096.jpg"
 archiveDir = None
 
 # The list of mirrors. Add new ones here.
-mirrors = [    "http://www.narrabri.atnf.csiro.au/operations/NASA/clouds_4096.jpg",
+mirrors = ["ftp://ftp.iastate.edu/pub/xplanet/clouds_4096.jpg",
 	       "http://home.megapass.co.kr/~holywatr/cloud_data/clouds_4096.jpg"]
 
 # end of user-tunable parameters
