@@ -12,8 +12,7 @@ The scripts were written specifically for the GNU/Linux platform but should work
 for all Unix compliant systems with access to Bourne shell, Gnome desktop
 manager, and Python. The xplanet package is required to be installed. The images
 come from NASA's image collection database, "Visible Earth". The cloud script
-was written by Michal Pasternak and is slightly modified to download the only
-larger cloud images.
+was written by Michal Pasternak and is slightly modified.
 
 --------------------------------------------------------------------------------
 Installation
@@ -21,10 +20,10 @@ Installation
 1. Create the directory structure:
 	$ sh install.sh
 
-This creates the directory structure in ${HOME}/.xplanet and downloads the
-images to the correct sub-directories.
+This creates the directory structure in ${HOME}/.xplanet and copies the images
+to the correct sub-directories.
 
-2. Create a new cron job entry:
+2a. Gnome - Create a new cron job entry:
 	$ crontab -e
 
 You may now add a cron job that executes the scripts automatically.
@@ -33,6 +32,12 @@ For example:
 
 This cron job will execute every 20 minutes with a high nice value (in the
 background).
+
+2b. KDE - Install Scripted Image Wallpaper plugin
+
+Use xplanet.sh for the script path.
+
+* http://kde-look.org/content/show.php/Scripted+Image+Wallpaper+Plugin?content=115147
 
 --------------------------------------------------------------------------------
 Uninstallation
