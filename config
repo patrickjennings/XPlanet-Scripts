@@ -1,6 +1,6 @@
 [earth]
 "Earth"
-cloud_map=clouds_4096.jpg
+cloud_map=clouds.jpg
 map=earth.jpg
 night_map=night.gif
 bump_map=bump.jpg

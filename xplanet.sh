@@ -35,5 +35,4 @@ python $homeDir/.xplanet/xplanet-download_clouds.py \
 xplanet -output $outputFile -geometry $geometry -config $configFile \
 	$xoptions
  
-# Update the Gnome backgound
-gconftool-2 -t str -s /desktop/gnome/background/picture_filename $outputFile
+echo $outputFile

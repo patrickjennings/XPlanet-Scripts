@@ -6,7 +6,7 @@
 # save the one to archive directory.
 #
 # Usage:
-#   python download_clouds.py - to save the output as clouds_2048.jpg
+#   python download_clouds.py - to save the output as clouds.jpg
 #   python download_coulds.py output.jpg - to save the output as output.jpg
 #
 # (C) 2004 Michal Pasternak <michal@pasternak.w.lub.pl>
@@ -16,22 +16,21 @@
 # user-tunable parameters:
 
 # how often to download the image?
-maxDownloadFrequencyHours = 3
+maxDownloadFrequencyHours = 12
 
 # how many times to retry if download fails (each time tries using a
 # different mirror)
-maxRetries = 3
+maxRetries = 2
 
 # default filename of the output file (in current directory). You can
 # specify it on the command line
-defaultOutputFile = "clouds_4096.jpg"
+defaultOutputFile = "clouds.jpg"
 
 # archive dir - where to save old files?
 archiveDir = None
 
 # The list of mirrors. Add new ones here.
-mirrors = ["ftp://ftp.iastate.edu/pub/xplanet/clouds_4096.jpg",
-	       "http://home.megapass.co.kr/~holywatr/cloud_data/clouds_4096.jpg"]
+mirrors = ["http://xplanetclouds.com/free/local/clouds_2048.jpg"]
 
 # end of user-tunable parameters
 
@@ -50,25 +49,23 @@ except:
 try:
     s = os.stat(outputFile)
     mtime = s[stat.ST_MTIME]
-    fs = s[stat.ST_SIZE]
     found = True
 except:
     mtime = 0
-    fs = 0
     found = False
     pass
 
-if time.time() - mtime < maxDownloadFrequencyHours * 3600 and fs > 400000:
+if time.time() - mtime < maxDownloadFrequencyHours * 3600:
     # sys.stderr.write("File is already up to date!\n")
     sys.exit(0)
 else:
     if found and archiveDir is not None:
-	# archivize old file
-	import shutil
-	archName = os.path.join(archiveDir, time.strftime("%Y-%m-%d_%H-%I") + "_" + os.path.basename(outputFile))
-	# sys.stderr.write("Archivizing old file to %s...\n" % archName)
-	shutil.move(outputFile, archName)
-	pass
+        # archivize old file
+        import shutil
+        archName = os.path.join(archiveDir, time.strftime("%Y-%m-%d_%H-%I") + "_" + os.path.basename(outputFile))
+        # sys.stderr.write("Archivizing old file to %s...\n" % archName)
+        shutil.move(outputFile, archName)
+        pass
     pass
 
 # ok, download:
