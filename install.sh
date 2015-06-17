@@ -24,6 +24,7 @@ cp -r world ${XPLANET_DIR}/world
 cp bump.jpg ${XPLANET_DIR}/bump.jpg
 cp night.gif ${XPLANET_DIR}/night.gif
 cp specular.jpg ${XPLANET_DIR}/specular.jpg
+cp clouds.jpg ${XPLANET_DIR}/clouds.jpg
 
 echo "**************"
 echo "**Completed!**"
