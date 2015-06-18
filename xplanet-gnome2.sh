@@ -2,7 +2,7 @@
 # Written by Patrick Jennings
 #
 # This xplanet script can be used to automatically update a users
-# gnome desktop background.
+# gnome 2 desktop background.
 #
 
 #!/bin/bash
@@ -16,7 +16,7 @@ geometry=1920x1200
 configFile=$homeDir/.xplanet/config
 
 # The name of the desktop image
-outputFile=$homeDir/Pictures/xplanet.png
+outputFile=$homeDir/.xplanet/xplanet.png
 
 # Here are some options you may want to edit. Read `man xplanet` for
 # a detailed explanation of each option.
@@ -31,7 +31,7 @@ month=`/bin/date +%m`
 python $homeDir/.xplanet/xplanet-download_clouds.py \
 	$homeDir/.xplanet/clouds.jpg
 
-# Run xplanet with a high nice value.
+# Run xplanet
 xplanet -output $outputFile -geometry $geometry -config $configFile \
 	$xoptions
  

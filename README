@@ -35,7 +35,7 @@ background).
 
 2b. KDE - Install Scripted Image Wallpaper plugin
 
-Use xplanet.sh for the script path.
+Use ~/.xplanet/xplanet.sh for the script path.
 
 * http://kde-look.org/content/show.php/Scripted+Image+Wallpaper+Plugin?content=115147
 
