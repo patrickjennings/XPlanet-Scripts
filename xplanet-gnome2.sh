@@ -28,7 +28,7 @@ month=`/bin/date +%m`
 /bin/ln -sf $homeDir/.xplanet/world/${month}.jpg $homeDir/.xplanet/earth.jpg
 
 # Get the cloud map
-python $homeDir/.xplanet/xplanet-download_clouds.py \
+python2 $homeDir/.xplanet/xplanet-download_clouds.py \
 	$homeDir/.xplanet/clouds.jpg
 
 # Run xplanet
