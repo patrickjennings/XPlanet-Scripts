@@ -1,72 +1,72 @@
-XPlanet Scripts v0.2
+XPlanet Scripts v0.3
 written by Patrick Jennings
-
+https://github.com/patrickjennings/XPlanet-Scripts
 
 --------------------------------------------------------------------------------
-About the scripts
+About the script
 
-I wrote the following scripts in order to easily setup a nice looking xplanet
-background image on to a Gnome desktop.
+I wrote the following script in order to easily setup a nice looking xplanet
+background image on to a Linux desktop.
 
 The scripts were written specifically for the GNU/Linux platform but should work
-for all Unix compliant systems with access to Bourne shell, Gnome desktop
-manager, and Python. The xplanet package is required to be installed. The images
-come from NASA's image collection database, "Visible Earth". The cloud script
-was written by Michal Pasternak and is slightly modified.
+for all Unix compliant systems with access to Bash shell, cURL, and coreutils.
+The xplanet package is required to be installed.
 
 --------------------------------------------------------------------------------
 Installation
 
-1. Create the directory structure:
-	$ sh install.sh
+1. Install the script and images:
+	$ ./install.sh
 
-This creates the directory structure in ${HOME}/.xplanet and copies the images
-to the correct sub-directories.
+This creates the directory structure in ~/.xplanet by default.
 
-2a. Gnome - Create a new cron job entry:
-	$ crontab -e
+--------------------------------------------------------------------------------
+Usage
 
-You may now add a cron job that executes the scripts automatically.
-For example:
-	0,20,40 * * * * /usr/bin/nice -n 19 /bin/sh ${HOME}/.xplanet/xplanet-gnome2.sh
+$ ./xplanet.sh
 
-This cron job will execute every 20 minutes with a high nice value (in the
-background).
+--------------------------------------------------------------------------------
+Changing DE Wallpaper
 
-2b. KDE - Install Scripted Image Wallpaper plugin
+1a. Gnome 2
 
+Add the following to the end of xplanet.sh:
+
+gconftool-2 -t str -s /desktop/gnome/background/picture_filename "$OUTPUTFILE"
+
+
+1b. KDE 4 - Scripted Image Wallpaper plugin
+
+Uncomment the echo "$OUTPUTFILE" line at the end of xplanet.sh.
 Use ~/.xplanet/xplanet.sh for the script path.
 
-* http://kde-look.org/content/show.php/Scripted+Image+Wallpaper+Plugin?content=115147
+http://kde-look.org/content/show.php/Scripted+Image+Wallpaper+Plugin?content=115147
+
+
+1c. KDE 5 - Slideshow wallpaper
+
+There is currently no interface for changing the plasma wallpaper. The only
+solution is to use a slideshow wallpaper and set a cron job to execute the
+xplanet script. Hopefully this will change.
 
 --------------------------------------------------------------------------------
 Uninstallation
 
 1. Delete directory structure:
-	$ rm -r ${HOME}/.xplanet
-
-2. Remove any cron job entries:
-	$ crontab -e
+	$ rm -r ~/.xplanet
 
 --------------------------------------------------------------------------------
 Options
 
 All configuration files will be in the users home directory:
-${HOME}/.xplanet
+~/.xplanet
 
-xplanet-gnome2.sh:
+xplanet.sh:
 	Options for editing the resulting xplanet image (latitude, longitude,
 	geometry, output file, etc) is located in this script.
 
-xplanet-download_clouds.py:
-	Options for downloading the cloud images reside here. Default is to
-	download a new cloud map every 3 hours.
-
 --------------------------------------------------------------------------------
 Resources
-
-Michal Pasternak's download_clouds.py ver. 1.1:
-	<http://xplanet.sourceforge.net//Extras/download_clouds.py>
 
 NASA's Visible Earth:
 	<http://visibleearth.nasa.gov/view_set.php?categoryId=2363&p=1>

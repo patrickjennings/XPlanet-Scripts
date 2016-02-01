@@ -1,8 +1,0 @@
-[earth]
-"Earth"
-cloud_map=clouds.jpg
-map=earth.jpg
-night_map=night.gif
-bump_map=bump.jpg
-bump_scale=1
-specular_map=specular.jpg
