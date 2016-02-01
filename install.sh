@@ -1,7 +1,7 @@
 #!/bin/sh
 # Written by Patrick Jennings
 # https://github.com/patrickjennings/XPlanet-Scripts
-# install.sh v0.3
+# install.sh v1.0
 
 # Installs the xplanet scripts into this directory.
 XPLANETDIR="$HOME/.xplanet"
