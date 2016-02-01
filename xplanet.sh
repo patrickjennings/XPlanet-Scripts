@@ -11,7 +11,7 @@ set -e
 GEOMETRY='1920x1200'
 
 # Xplanet options. Read `man xplanet` for an explanation of each option.
-XOPTIONS='-num_times 1 -projection rectangular -quality 100 -light_time -verbosity -1'
+XOPTIONS='-num_times 1 -projection rectangular -light_time -verbosity -1'
 
 # Date commands. May be different if you don't use coreutils.
 TIMESTAMP=`date +%s`
