@@ -63,7 +63,7 @@ All configuration files will be in the users home directory:
 
 xplanet.sh:
 	Options for editing the resulting xplanet image (latitude, longitude,
-	geometry, output file, etc) is located in this script.
+	geometry, output file, etc) are located in this script.
 
 --------------------------------------------------------------------------------
 Resources
