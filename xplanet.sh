@@ -123,4 +123,8 @@ xplanet -geometry "$GEOMETRY" -output "$OUTPUTFILE" -config "$XCONFIGFILE" $XOPT
 # Delete temporary config file.
 rm "$XCONFIGFILE"
  
+# Uncomment to output file name after completion
 #echo "$OUTPUTFILE"
+
+# Uncomment to change a Gnome 2 desktop wallpaper
+#gconftool-2 -t str -s /desktop/gnome/background/picture_filename "$OUTPUTFILE"

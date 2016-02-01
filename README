@@ -8,7 +8,7 @@ About the script
 I wrote the following script in order to easily setup a nice looking xplanet
 background image on to a Linux desktop.
 
-The scripts were written specifically for the GNU/Linux platform but should work
+The script were written specifically for the GNU/Linux platform but should work
 for all Unix compliant systems with access to Bash shell, cURL, and coreutils.
 The xplanet package is required to be installed.
 
@@ -23,14 +23,14 @@ This creates the directory structure in ~/.xplanet by default.
 --------------------------------------------------------------------------------
 Usage
 
-$ ./xplanet.sh
+$ .~/xplanet.sh
 
 --------------------------------------------------------------------------------
 Changing DE Wallpaper
 
-1a. Gnome 2
+1a. Gnome 2 - gconftool-2
 
-Add the following to the end of xplanet.sh:
+Uncomment the following line at the end of xplanet.sh:
 
 gconftool-2 -t str -s /desktop/gnome/background/picture_filename "$OUTPUTFILE"
 
